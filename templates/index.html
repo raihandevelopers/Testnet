@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Sales Tracker</title>
+</head>
+
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Sales Tracker</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+
+        <div class="container mt-5 mb-2 w-25">
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="Web">Enter Website Name</label>
+                    <input type="text" class="form-control" id="web-name" name="website" placeholder="google.com">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+
+        </div>
+        {% if data_len != 0 %}
+        <h3 class="text-center my-3 text-primary">{{data[0]}}</h3>
+        <table class="d-flex justify-content-center">
+            <tr class="d-flex justify-content-center">
+                <td class="mr-5">
+                    <h5>Monthly revenue</h5>
+                </td>
+                <td class="mr-5">
+                    <h5>Bounce Rate</h5>
+                </td>
+                <td class="mr-5">
+                    <h5>Global Rank</h5>
+                </td>
+            </tr>
+            <tr class="d-flex justify-content-around">
+                <td class="mr-5">
+                    <h5>{{data[1]}}</h5>
+                </td>
+                <td class="mr-5">
+                    <h5>{{data[2]}}</h5>
+                </td>
+                <td class="mr-5">
+                    <h5>#{{data[3]}}</h5>
+                </td>
+            </tr>
+        </table>    
+        {% else %}
+            <h4 class="text-center text-danger my-3">Enter the website name to view the data</h4>
+        {% endif %}
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
